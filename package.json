@@ -1,0 +1,20 @@
+{
+  "name": "json-emv-lib",
+  "version": "1.0.0",
+  "description": "an npm library for using the json-emv-json converter library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "emv",
+    "converter"
+  ],
+  "author": "jiro quijano",
+  "license": "ISC",
+  "dependencies": {
+    "crc": "^3.8.0",
+    "lodash": "^4.17.20"
+  }
+}
