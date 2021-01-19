@@ -1,10 +1,10 @@
 {
   "name": "json-emv-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "an npm library for using the json-emv-json converter library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch --runInBand --detectOpenHandles"
   },
   "keywords": [
     "json",
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "crc": "^3.8.0",
+    "jest": "^26.6.3",
     "lodash": "^4.17.20"
   }
 }
