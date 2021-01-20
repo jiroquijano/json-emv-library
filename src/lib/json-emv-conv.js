@@ -18,11 +18,16 @@ const transformToEMVFormat = (key, payload) =>{
     if(typeof(payload) === 'string'){ //for simple string payload
         return `${keyToIDMap[key]}${padPayloadLength(payload)}${payload}`;
     }else if(_.isArray(payload)){ //for nested array payload
-        console.log('[JSONEMVLIB][transformToEMVFormat] transforming nested payload:\n', payload);
         const rootkey = keyToIDMap[key];
-        const aggregatedChildArray = payload.reduce((acc,curr)=>{
-            return `${acc}${transformToEMVFormat(curr[0],curr[1])}`;
-        },'');
+        let aggregatedChildArray;
+        try {
+            console.log('[JSONEMVLIB] transforming nested payload:\n', payload);
+            aggregatedChildArray = payload.reduce((acc,curr)=>{
+                return `${acc}${transformToEMVFormat(curr[0],curr[1])}`;
+            },'');
+        } catch (error) {
+            throw new Error('[JSONEMVLIB] payload: ( ' + payload + ' ) is not an array');
+        }
         return `${rootkey}${padPayloadLength(aggregatedChildArray)}${aggregatedChildArray}`;
     }
 }
