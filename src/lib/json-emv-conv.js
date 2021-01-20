@@ -16,8 +16,10 @@ const calculateAndFormatCRC = (input) =>{
 //EMV format: `[KEY][PAYLOAD LENGTH][PAYLOAD]`
 const transformToEMVFormat = (key, payload) =>{
     if(typeof(payload) === 'string'){ //for simple string payload
+        console.log('[JSONEMVLIB][transformToEMVFormat] transforming string payload:\n', payload);
         return `${keyToIDMap[key]}${padPayloadLength(payload)}${payload}`;
     }else if(_.isArray(payload)){ //for nested array payload
+        console.log('[JSONEMVLIB][transformToEMVFormat] transforming nested payload:\n', payload);
         const rootkey = keyToIDMap[key];
         const aggregatedChildArray = payload.reduce((acc,curr)=>{
             return `${acc}${transformToEMVFormat(curr[0],curr[1])}`;
