@@ -21,7 +21,6 @@ const transformToEMVFormat = (key, payload) =>{
         const rootkey = keyToIDMap[key];
         let aggregatedChildArray;
         try {
-            console.log('[JSONEMVLIB] transforming nested payload:\n', payload);
             aggregatedChildArray = payload.reduce((acc,curr)=>{
                 return `${acc}${transformToEMVFormat(curr[0],curr[1])}`;
             },'');
