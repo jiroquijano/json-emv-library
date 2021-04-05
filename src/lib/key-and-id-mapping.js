@@ -32,7 +32,7 @@ const keyToIDMap = {
     'guid':'00', 'acqid':'01', 'merid':'03', 'pnflags':'05',
     'mcc':'52', 'txCurrency':'53', 'txAmt':'54', 'cc':'58',
     'merName':'59', 'merCity':'60', 'additional':'62',
-    'context':'00', 'refLabel':'05', 'termLabel':'07',
+    'refLabel':'05', 'termLabel':'07',
     'crc':'63'
 };
 

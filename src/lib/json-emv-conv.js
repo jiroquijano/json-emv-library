@@ -37,7 +37,7 @@ const convertObjectToArray = (input)=>{ //transform object to array to guarantee
         if(input[key]){
             if(key === 'mait' || key === 'additional'){
                 const innerArray = [];
-                const validInnerKeys = key==='mait' ? ['guid','acqid','merid','pnflags'] : ['context', 'refLabel','termLabel']
+                const validInnerKeys = key==='mait' ? ['guid','acqid','merid','pnflags'] : ['guid', 'refLabel','termLabel']
                 validInnerKeys.forEach((innerKey)=>{
                     if(input[key][innerKey]){
                         innerArray.push([innerKey, input[key][innerKey]]);
