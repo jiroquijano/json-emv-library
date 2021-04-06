@@ -32,13 +32,13 @@ const keyToIDMap = {
     'guid':'00', 'acqid':'01', 'merid':'03', 'pnflags':'05',
     'mcc':'52', 'txCurrency':'53', 'txAmt':'54', 'cc':'58',
     'merName':'59', 'merCity':'60', 'additional':'62',
-    'refLabel':'05', 'termLabel':'07',
+    'guidContext':'00', 'refLabel':'05', 'termLabel':'07',
     'crc':'63'
 };
 
 const getKeyFromID = (id, keyShift=0) =>{
     const idToKeyMap = {
-        '00':['pfi','guid'],
+        '00':['pfi','guid', 'guidContext'],
         '01':['pim','acqid'],
         '03':['','merid'],
         '05':['','pnflags|refLabel'],

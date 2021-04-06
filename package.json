@@ -1,6 +1,6 @@
 {
   "name": "json-emv-lib",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "an npm library for using the json-emv-json converter library",
   "main": "index.js",
   "scripts": {
